@@ -3,6 +3,7 @@ podTemplate(containers: [containerTemplate(name: 'maven', image: 'maven', comman
     checkout scm
     container('maven') {
       sh 'mvn -B -ntp -Dmaven.test.failure.ignore verify'
+      echo 'This is room 3'
     }
     junit '**/target/surefire-reports/TEST-*.xml'
   }
